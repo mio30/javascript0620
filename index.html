@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>sample</title>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <style>
+    .show,.show2 {
+      opacity: 0;
+      transform: translateX(20px);
+      transition: 500ms;
+      display: none;
+    }
+    .angle-down {
+      display: inline-block;
+    }
+    .angle-up {
+      display: none;
+    }
+    .menu {
+      padding: 10px;
+      border-bottom: solid 1px #000;
+    }
+    .content {
+      border-bottom: 1px dotted #000;
+      list-style-type: none;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2 onclick="func1(),menu()" class="menu">
+    <i class="fas fa-angle-down fa-fw angle-down" id="angle-down"></i>
+    <i class="fas fa-angle-up fa-fw angle-up" id="angle-up"></i>
+    メニュー1
+  </h2>
+  <div id="mymenu" class="show">
+    <ul>
+      <li class="content">中身1</li>
+      <li class="content">中身2</li>
+      <li class="content">中身3</li>
+    </ul>
+  </div>
+  <h2 onclick="func2(),mymenu()" class="menu">
+    <i class="fas fa-angle-down fa-fw angle-down" id="angle-down2"></i>
+    <i class="fas fa-angle-up fa-fw angle-up" id="angle-up2"></i>
+    メニュー2
+  </h2>
+  <div id="mymenu2" class="show2">
+    <ul>
+      <li class="content">中身1</li>
+      <li class="content">中身2</li>
+      <li class="content">中身3</li>
+      <li class="content">中身4</li>
+    </ul>
+  </div>
+  <script language="javascript" type="text/javascript">
+    function func1() {
+      const elem = document.getElementById("mymenu");
+      elem.classList.toggle('show');
+    }
+    function menu() {
+      const menu = document.getElementById("angle-down");
+      menu.classList.toggle('angle-up');
+      const menu2 = document.getElementById("angle-up");
+      menu2.classList.toggle('angle-up');
+    }
+    function func2() {
+      const elem = document.getElementById("mymenu2");
+      elem.classList.toggle('show2');
+    }
+    function mymenu() {
+      const menu = document.getElementById("angle-down2");
+      menu.classList.toggle('angle-up');
+      const menu2 = document.getElementById("angle-up2");
+      menu2.classList.toggle('angle-up');
+    }
+  </script>
+</body>
+</html>
